@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NewsVerify Pro - News Analysis</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body { 
+        font-family: 'Georgia', 'Times New Roman', serif;
+        width: 420px;
+        background: #fafafa;
+      }
+      .header {
+        background: linear-gradient(135deg, #e31837 0%, #8a3ffc 100%);
+        color: white;
+        padding: 16px;
+        text-align: center;
+      }
+      .header h2 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      .header p {
+        font-size: 11px;
+        opacity: 0.9;
+      }
+      .content {
+        padding: 16px;
+      }
+      .button-group {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+      button {
+        flex: 1;
+        padding: 12px;
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 14px;
+        transition: all 0.2s;
+      }
+      button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      }
+      .btn-primary {
+        background: #e31837;
+        color: white;
+      }
+      .btn-secondary {
+        background: #8a3ffc;
+        color: white;
+      }
+      .result-container {
+        background: white;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 16px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        display: none;
+      }
+      .result-container.show {
+        display: block;
+      }
+      .loading {
+        text-align: center;
+        padding: 20px;
+        color: #666;
+      }
+      .spinner {
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #e31837;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 10px;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      .metric {
+        margin: 12px 0;
+        padding: 8px;
+        background: #f8f9fa;
+        border-radius: 4px;
+      }
+      .metric-label {
+        font-weight: 600;
+        color: #333;
+        font-size: 12px;
+        margin-bottom: 4px;
+      }
+      .metric-value {
+        font-size: 14px;
+        color: #666;
+      }
+      .badge {
+        display: inline-block;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 11px;
+        font-weight: 600;
+        margin: 4px 4px 4px 0;
+      }
+      .badge-success {
+        background: #4caf50;
+        color: white;
+      }
+      .badge-error {
+        background: #f44336;
+        color: white;
+      }
+      .badge-warning {
+        background: #ff9800;
+        color: white;
+      }
+      .badge-info {
+        background: #2196f3;
+        color: white;
+      }
+      .flags {
+        display: flex;
+        gap: 8px;
+        margin-top: 12px;
+      }
+      .flag-btn {
+        flex: 1;
+        padding: 8px;
+        font-size: 12px;
+      }
+      .flag-green {
+        background: #4caf50;
+        color: white;
+      }
+      .flag-red {
+        background: #f44336;
+        color: white;
+      }
+      .error {
+        background: #ffebee;
+        color: #c62828;
+        padding: 12px;
+        border-radius: 4px;
+        margin-top: 12px;
+      }
+      .section-title {
+        font-size: 14px;
+        font-weight: 700;
+        margin: 16px 0 8px 0;
+        color: #333;
+        border-bottom: 2px solid #e31837;
+        padding-bottom: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h2>NewsVerify Pro</h2>
+      <p>Professional News Analysis Extension</p>
+    </div>
+    <div class="content">
+      <div class="button-group">
+        <button class="btn-primary" id="check">Analyze Page</button>
+        <button class="btn-secondary" id="analyze-url">Analyze URL</button>
+      </div>
+
+      <div id="result" class="result-container">
+        <div class="loading" id="loading">
+          <div class="spinner"></div>
+          <p>Analyzing news content...</p>
+        </div>
+        <div id="analysis" style="display: none;">
+          <div class="section-title">Authenticity Result</div>
+          <div id="authenticity"></div>
+
+          <div class="section-title">Analysis Details</div>
+          <div id="details"></div>
+
+          <div class="section-title">Community Verification</div>
+          <div class="flags">
+            <button class="flag-btn flag-green" id="flag-green">✓ Green Flag (<span id="green-count">0</span>)</button>
+            <button class="flag-btn flag-red" id="flag-red">✗ Red Flag (<span id="red-count">0</span>)</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
