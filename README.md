@@ -2,7 +2,7 @@
 
 A comprehensive AI-powered news analysis platform with real-time detection, industry classification, language detection, country origin identification, and quantified ML scores. Built with React, Node.js, Flask, and advanced ML models.
 
-## 🚀 Features
+##  Features
 
 - **Comprehensive Analysis**: Industry category, language detection, country origin, sentiment analysis, and credibility scoring
 - **ML-Powered Detection**: Advanced AI models with confidence scores and fake news probability
@@ -13,7 +13,7 @@ A comprehensive AI-powered news analysis platform with real-time detection, indu
 - **Professional Dashboard**: Visual analytics and history tracking
 - **Trending News Analysis**: Explore and analyze trending news articles
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 NewsVerify Pro/
@@ -24,14 +24,14 @@ NewsVerify Pro/
 └── docker-compose.yml
 ```
 
-## 📋 Prerequisites
+## Prerequisites
 
 - **Docker Desktop** (recommended) OR
 - **Node.js** (v16+)
 - **Python** (v3.8+)
 - **MongoDB** (local or Atlas cloud)
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Option 1: Docker (Recommended)
 
@@ -87,7 +87,7 @@ NewsVerify Pro/
    npm start
    ```
 
-## 🌐 Chrome Extension Setup
+## Chrome Extension Setup
 
 1. **Load the extension**:
    - Open Chrome and go to `chrome://extensions/`
@@ -104,7 +104,7 @@ NewsVerify Pro/
    - Click the extension icon
    - Click "Analyze Page" to get comprehensive analysis
 
-## 📊 API Endpoints
+## API Endpoints
 
 ### Analysis
 - `POST /api/analyze/comprehensive` - Comprehensive news analysis
@@ -120,7 +120,7 @@ NewsVerify Pro/
 - `GET /api/news/trending` - Get trending news
 - `GET /api/health` - Health check
 
-## 🔧 Configuration
+##  Configuration
 
 ### Environment Variables (.env)
 
@@ -137,7 +137,7 @@ JWT_SECRET=supersecurekey
 - **MongoDB Atlas**: Use connection string from Atlas dashboard
 - **Docker**: Use `mongodb://host.docker.internal:27017/deepfakeDB`
 
-## 📦 ML Service Features
+## ML Service Features
 
 The ML service provides:
 - **Language Detection**: Automatic detection of news language
@@ -148,7 +148,7 @@ The ML service provides:
 - **Risk Indicators**: Flags potential issues in content
 - **Fake News Detection**: ML-powered authenticity verification
 
-## 🎨 Frontend Features
+## Frontend Features
 
 - **Professional Design**: Times of India-inspired professional UI
 - **Real-Time Analysis**: Instant results with loading states
@@ -157,14 +157,14 @@ The ML service provides:
 - **History Tracking**: View all past analyses
 - **Community Flags**: See and submit green/red flags
 
-## 🔒 Security Notes
+## Security Notes
 
 - JWT tokens for authentication (if implemented)
 - CORS enabled for development
 - File upload limits configured
 - Environment variables for sensitive data
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### ML Service not connecting
 - Check if ML service is running on port 8000
@@ -185,7 +185,7 @@ The ML service provides:
 - Change ports in `docker-compose.yml` if needed
 - Update API URLs in frontend if ports change
 
-## 📝 Development
+## Development
 
 ### Adding new ML models
 1. Update `ml_service/app.py` with new model
@@ -197,21 +197,17 @@ The ML service provides:
 2. Update frontend components in `client/src/pages/`
 3. Update Chrome extension if needed
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
 4. Submit a pull request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
 
-## 👨‍💻 Author
 
-Created with ❤️ for professional news analysis
-
----
 
 **NewsVerify Pro** - Trust what you see. Verify what you share.
